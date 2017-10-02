@@ -38,4 +38,8 @@ python2 /home/pooja/miniconda3/bin/mavproxy.py
 For api documentation :
 http://python.dronekit.io/guide/copter/guided_mode.html
 
+To set drone flying station:
+The drones start automatically from the nearest flying station to your location. You can set something locally by adding the location (lat,lon) to the file-> ./Tools/autotest/locations.txt:uofa=32.2319,-110.952725,742,90
+
+
 
