@@ -1,0 +1,5 @@
+https://github.com/tooshel/nodebotsWTM
+
+Build a Nodebot using intel tiny tile and a motor controller. Also used Pagenodes to change the led lights and control the bot using IoT controls.
+
+Accerometer and gyroscope values are read by the firmware through I2C driver communication and enable controlling through a gamepad.
