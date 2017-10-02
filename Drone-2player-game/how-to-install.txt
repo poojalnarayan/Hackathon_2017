@@ -1,0 +1,41 @@
+Designed and implemented a two player drone flying game as part of Women Tucson Hackathon.
+Used dronekit toolkit and ArduPilot simulator, code here :  git clone git://github.com/ArduPilot/ardupilot.git
+(git submodule update --init --recursive)
+
+Bunch of Installations:
+sudo pip install future pymavlink MAVProxy
+export PATH=$PATH:$HOME/ardupilot/Tools/autotest
+pip install future
+pip install wx
+sudo apt-get install python-wxgtk2.8
+sudo apt-get install python-numpy python-opencv
+sudo pip2 install dronekit
+sudo pip2 install mavutil
+sudo pip2 install pygame
+pip install pymavlink
+
+The drone simulator runs to give the lat,long and other information:
+sim_vehicle.py -v
+sim_vehicle.py --map --console
+sim_vehicle.py --map --console -L uofa
+sim_vehicle.py --map --console -L uofa -I 1 --out 127.0.0.1:14562
+(The port number displayed here is the same port you need to listen to from the player game .py file
+SIM_VEHICLE: "mavproxy.py" "--master" "tcp:127.0.0.1:5770" "--sitl" "127.0.0.1:5511" "--out" "127.0.0.1:14560" "--out" "127.0.0.1:14561" "--out" "127.0.0.1:14562" "--map" "--console")
+sim_vehicle.py --map --console -L uofa -I 1 --out 127.0.0.1:14562
+
+To run the 2playes, start player 1 ad 2, they map on two differnt simulator maps from sim_vehicle.
+
+
+Used jstest-gtk package to identify which key stroke from joystick corresponds to which button number and mapped it to the corresponding operation in the player game program
+
+
+To plot both simulated drone vehicles on the same map:
+python2 /home/pooja/miniconda3/bin/mavproxy.py
+  python2 /home/pooja/miniconda3/bin/mavproxy.py -h
+  python2 /home/pooja/miniconda3/bin/mavproxy.py --master=0.0.0.0:14571 --master=0.0.0.0:14561 --map
+  python2 /home/pooja/miniconda3/bin/mavproxy.py --master=0.0.0.0:14572 --master=0.0.0.0:14562 --map
+
+For api documentation :
+http://python.dronekit.io/guide/copter/guided_mode.html
+
+
